@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirmação de Presença</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <header class="menu">
+    <nav>
+      <ul>
+        <li><a href="index.html">Presentes</a></li>
+        <li><a href="nos.html">Nossa História</a></li>
+        <li><a href="confirmacao.html" class="ativo">Confirmação</a></li>
+        <li><a href="local.html">Local</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Confirmação de Presença</h1>
+    <p id="mensagem"></p>
+    <form id="confirmacaoForm">
+      <label for="nome_digitado">Seu nome completo:</label>
+      <input type="text" name="data[nome_digitado]" id="nome_digitado" required />
+      <input type="hidden" name="data[nome_convidado]" id="nome_convidado" />
+      <label for="presenca">Você irá ao casamento?</label>
+      <select name="data[presenca]" id="presenca" required>
+        <option value="">Selecione</option>
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+      </select>
+      <label for="acompanhantes">Quantos acompanhantes?</label>
+      <select name="data[acompanhantes]" id="acompanhantes" required></select>
+      <label for="nomes">Nome do(s) acompanhante(s):</label>
+      <textarea name="data[nome_dos_acompanhantes]" placeholder="Digite os nomes"></textarea>
+      <input type="hidden" name="data[data_envio]" id="data_envio" />
+      <button type="submit">Confirmar Presença</button>
+    </form>
+  </div>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const convidado = urlParams.get('convidado');
+    const nomeInput = document.getElementById('nome_convidado');
+    const mensagem = document.getElementById('mensagem');
+    const acompanhantesSelect = document.getElementById('acompanhantes');
+    const hoje = new Date().toLocaleString();
+
+    console.log('Convidado da URL:', convidado);
+
+    if (convidado) {
+      nomeInput.value = convidado;
+      mensagem.innerText = `Olá ${convidado}, por favor confirme sua presença.`;
+      acompanhantesSelect.innerHTML =
+        convidado.toLowerCase() === 'joao'
+          ? '<option value="0">0</option>'
+          : '<option value="0">0</option><option value="1">1</option>';
+    } else {
+      mensagem.innerText = 'Por favor, preencha o formulário para confirmar sua presença.';
+      acompanhantesSelect.innerHTML = '<option value="0">0</option><option value="1">1</option>';
+    }
+
+    document.getElementById('data_envio').value = hoje;
+
+    document.getElementById('confirmacaoForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      console.log('Formulário enviado. Preparando dados para envio...');
+
+      const formData = new FormData(this);
+
+      // Exibir dados para debug
+      for (let pair of formData.entries()) {
+        console.log(pair[0] + ': ' + pair[1]);
+      }
+
+      fetch('https://sheetdb.io/api/v1/9l8o1tmqvxc76', {
+        method: 'POST',
+        body: formData,
+      })
+        .then((response) => {
+          console.log('Resposta da API:', response);
+          if (response.ok) {
+            alert('Confirmação enviada com sucesso! Muito obrigado 💕');
+            this.reset();
+          } else {
+            alert('Erro ao enviar. Tente novamente mais tarde.');
+          }
+        })
+        .catch((error) => {
+          console.error('Erro na requisição:', error);
+          alert('Erro na comunicação com o servidor. Tente novamente mais tarde.');
+        });
+    });
+  </script>
+</body>
+</html>
+

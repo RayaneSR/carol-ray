@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Presentes de Casamento</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="menu">
+    <nav>
+      <ul>
+        <li><a href="index.html" class="ativo">Presentes</a></li>
+        <li><a href="nos.html">Nossa História</a></li>
+        <li><a href="confirmacao.html">Confirmação</a></li>
+        <li><a href="#local">Local</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Presentes de Casamento 💛</h1>
+    <p>Escolha um valor para nos presentear via Pix:</p>
+    <div class="valores">
+      <div class="valor">R$ 50,00</div>
+      <div class="valor">R$ 100,00</div>
+      <div class="valor">R$ 150,00</div>
+      <div class="valor">Outro valor 💬</div>
+    </div>
+    <h2>Chave Pix:</h2>
+    <p id="pix">chave-pix-ficticia@exemplo.com</p>
+    <button onclick="copiarPix()">Copiar chave Pix</button>
+    <h2>QR Code:</h2>
+    <img src="qrcode.png" alt="QR Code Pix" width="200">
+  </div>
+  <script>
+    function copiarPix() {
+      navigator.clipboard.writeText(document.getElementById('pix').innerText);
+      alert("Chave Pix copiada!");
+    }
+  </script>
+</body>
+</html>
