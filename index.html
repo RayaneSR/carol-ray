@@ -24,16 +24,17 @@
     <h1>Presentes de Casamento 💛</h1>
     <p>Escolha um valor para nos presentear via Pix:</p>
     <div class="valores">
-      <div class="valor">R$ 50,00</div>
-      <div class="valor">R$ 100,00</div>
-      <div class="valor">R$ 150,00</div>
-      <div class="valor">Outro valor 💬</div>
+      <button class="valor" id="cinquenta"><a href="./qr50.html">R$ 50,00</a>
+      </button>
+      <div class="valor" id="cem">R$ 100,00</div>
+      <div class="valor" id="centoecinquenta">R$ 150,00</div>
+      <div class="valor" id="outro">Outro valor 💬</div>
     </div>
     <h2>Chave Pix:</h2>
-    <p id="pix">chave-pix-ficticia@exemplo.com</p>
+    <p id="pix">presentesraycarol@gmail.com</p>
     <button onclick="copiarPix()">Copiar chave Pix</button>
     <h2>QR Code:</h2>
-    <img src="qrcode.png" alt="QR Code Pix" width="200">
+    <img src="./qrcode.png" alt="QR Code Pix" width="200">
   </div>
   <script>
     function copiarPix() {
