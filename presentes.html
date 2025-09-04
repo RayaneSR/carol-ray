@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presentes de Casamento</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="menu">
+    <nav>
+      <ul>
+        <li><a href="index.html">Nossa História</a></li>
+        <li><a href="confirmacao.html">Confirmação</a></li>
+        <li><a href="local.html">Local</a></li>
+        <li><a href="presentes.html"class="ativo">Presentes</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <h1>Presentes de Casamento</h1>
+    <p>Escolha um valor para nos presentear via Pix:</p>
+    
+    <div class="valores">
+      <button class="valor" id="cinquenta"><a href="./qr50.html">R$ 50,00</a> </button>
+      <button class="valor" id="cem"> <a href="./qr100.html">R$ 100,00</a></button>
+      <button class="valor" id="centoecinquenta"><a href="./qr150.html">R$ 150,00</a></button>
+      <button class="valor" id="outro"><a href="./qrov.html">Outro valor</a></button>
+    </div>
+    <h2>Chave Pix:</h2>
+    <p id="pix">presentesraycarol@gmail.com</p>
+    <button onclick="copiarPix()">Copiar chave Pix</button>
+    <h2>QR Code:</h2>
+    <img src="./qrcode.png" alt="QR Code Pix" width="200">
+
+    <p class="obg">Obrigada!</p>
+  </div>
+  <script>
+    function copiarPix() {
+      navigator.clipboard.writeText(document.getElementById('pix').innerText);
+      alert("Chave Pix copiada!");
+    }
+  </script>
+
+  <footer class="rodape">
+    <h6>&copy;2025 Rayane Araujo - Todos os direitos reservados</h6>
+  </footer>
+</body>
+</html>

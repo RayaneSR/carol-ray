@@ -3,7 +3,7 @@
 <html lang="pt-BR">
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Presentes de Casamento</title>
+  <title>Nossa História</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,37 +13,25 @@
   <header class="menu">
     <nav>
       <ul>
-        <li><a href="nos.html">Nossa História</a></li>
+        <li><a href="index.html" class="ativo">Nossa História</a></li>
         <li><a href="confirmacao.html">Confirmação</a></li>
         <li><a href="local.html">Local</a></li>
-        <li><a href="index.html"class="ativo">Presentes</a></li>
+        <li><a href="presentes.html">Presentes</a></li>
       </ul>
     </nav>
   </header>
   <div class="container">
-    <h1>Presentes de Casamento</h1>
-    <p>Escolha um valor para nos presentear via Pix:</p>
+    <img class="logo" src="./aer.png" alt="Logo de casamento com as inciais A e R">
+    <h1>Nossa História</h1>
+    <img class="noivas" src="./noivas.jpg" alt="noivas sorrindo mostrando as alianças">
     
-    <div class="valores">
-      <button class="valor" id="cinquenta"><a href="./qr50.html">R$ 50,00</a> </button>
-      <button class="valor" id="cem"> <a href="./qr100.html">R$ 100,00</a></button>
-      <button class="valor" id="centoecinquenta"><a href="./qr150.html">R$ 150,00</a></button>
-      <button class="valor" id="outro"><a href="./qrov.html">Outro valor</a></button>
-    </div>
-    <h2>Chave Pix:</h2>
-    <p id="pix">presentesraycarol@gmail.com</p>
-    <button onclick="copiarPix()">Copiar chave Pix</button>
-    <h2>QR Code:</h2>
-    <img src="./qrcode.png" alt="QR Code Pix" width="200">
-
-    <p class="obg">Obrigada!</p>
+    <p>
+      Aqui você pode contar um pouco da história de vocês: como se conheceram, momentos especiais, o pedido de casamento, etc.
+    </p>
+    <p>
+      Exemplo: Nos conhecemos em 2018, quando dois olhares se cruzaram em uma tarde qualquer... Desde então, colecionamos memórias, aprendizados e muito amor. Após tantos momentos juntos, decidimos celebrar essa união com todos que amamos. Seja muito bem-vindo(a) ao nosso grande dia! ❤️
+    </p>
   </div>
-  <script>
-    function copiarPix() {
-      navigator.clipboard.writeText(document.getElementById('pix').innerText);
-      alert("Chave Pix copiada!");
-    }
-  </script>
 
   <footer class="rodape">
     <h6>&copy;2025 Rayane Araujo - Todos os direitos reservados</h6>
