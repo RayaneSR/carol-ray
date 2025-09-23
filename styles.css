@@ -165,6 +165,14 @@ textarea {
   object-fit: cover;     /* garante que a imagem se ajuste sem distorcer */
   border: 2px solid #fff; /* opcional - adiciona uma borda */
 }
+
+.brinde {
+  width: 300px;          /* define a largura */
+  height: 300px;         /* define a altura */
+  border-radius: 20%;    /* deixa a imagem redonda */
+  object-fit: cover;     /* garante que a imagem se ajuste sem distorcer */
+  border: 1px solid #fff; /* opcional - adiciona uma borda */
+}
 .logo {
   width: 100px;          /* define a largura */
   height: 100px;         /* define a altura */
@@ -185,6 +193,18 @@ textarea {
 
 img.qrcode50{
   text-align: center;
+  display: block;
+  margin: 0 auto;
+  object-fit: cover;     /* garante que a imagem se ajuste sem distorcer */
+  
+}
+
+img.qr100{
+  text-align: center;
+  size: 0%;
+  max-width: 100%;   /* nunca passa da largura do container */
+  height: auto;
+  width:400px;          /* define a largura */
   display: block;
   margin: 0 auto;
   object-fit: cover;     /* garante que a imagem se ajuste sem distorcer */

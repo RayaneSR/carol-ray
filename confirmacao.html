@@ -15,7 +15,7 @@
   <header class="menu">
     <nav>
       <ul>
-        <li><a href="index.html" >Nossa História</a></li>
+        <li><a href="index.html" >História</a></li>
         <li><a href="confirmacao.html" class="ativo">Confirmação</a></li>
         <li><a href="local.html">Local</a></li>
         <li><a href="presentes.html">Presentes</a></li>
@@ -23,6 +23,7 @@
     </nav>
   </header>
   <div class="container">
+    <img class="logo" src="./aer.png" alt="Logo de casamento com as inciais A e R">
     <h1>Confirmação de Presença</h1>
     <p id="mensagem"></p>
     <form id="confirmacaoForm">
@@ -37,7 +38,7 @@
       </select>
       <label for="acompanhantes">Quantos acompanhantes?</label>
       <select name="data[acompanhantes]" id="acompanhantes" required></select>
-      <label for="nomes">Nome do(s) acompanhante(s):</label>
+      <label for="nomes">Nome acompanhante:</label>
       <textarea name="data[nome_dos_acompanhantes]" id="nome_dos_acompanhantes" placeholder="Digite os nomes"></textarea>
       <input type="hidden" name="data[data_envio]" id="data_envio" />
       <button type="submit">Confirmar Presença</button>
