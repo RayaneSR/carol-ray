@@ -45,10 +45,17 @@ h1, h2 {
   
   font-family: "Lora", bold;
   color: #fdfaf6;
+  text-align: center;
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
 }
 
 p{
   font-family: "Lora", normal;
+  font-size: 18px;
+  margin-bottom: 16px;
   color: #f4f3f2;
 }
 .voltar{
@@ -224,6 +231,12 @@ iframe {
   border: 0;         /* remove a borda padrão */
   border-radius: 10px; /* bordas arredondadas */
   box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* sombra leve para destaque */
+}
+
+h2 {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #b3f41a;
 }
 
 
